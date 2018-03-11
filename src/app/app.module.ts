@@ -5,12 +5,12 @@ import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
-import { ResortListComponent } from './resort-list/resort-list.component';
-import { WeatherComponent } from './weather/weather.component';
-import { SocialMediaComponent } from './social-media/social-media.component';
-import { ResortSmallCardComponent } from './resort-small-card/resort-small-card.component';
-import { CategoryMenuComponent } from './category-menu/category-menu.component';
-import { ResortCardComponent } from './resort-card/resort-card.component';
+import { ResortListComponent } from './components/resort-list/resort-list.component';
+import { WeatherComponent } from './components/weather/weather.component';
+import { SocialMediaComponent } from './components/social-media/social-media.component';
+import { ResortSmallCardComponent } from './components/resort-small-card/resort-small-card.component';
+import { CategoryMenuComponent } from './components/category-menu/category-menu.component';
+import { ResortCardComponent } from './components/resort-card/resort-card.component';
 import {ResortsService} from './services/resorts.service';
 import { ResortFilterPipe } from './pipes/resort-filter.pipe';
 

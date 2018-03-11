@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import {Resort} from '../../resort';
+import {Resort} from '../../../resort';
 
 
 @Component({

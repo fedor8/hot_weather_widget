@@ -10,7 +10,6 @@ export class ResortFilterPipe implements PipeTransform {
     if (!category) {
       return resorts;
     }
-    console.log(category, resorts);
     return resorts.filter((resort: Resort) =>
       resort.categories.includes(category)
     );
