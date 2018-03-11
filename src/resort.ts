@@ -33,6 +33,7 @@ export class Resort implements Place {
   phoneNumber: string;
   name: string;
   picture: string;
+  extraPictures: string[];
   weatherForcast: WeatherForcast;
   socialMedia: SocialMedia;
 }

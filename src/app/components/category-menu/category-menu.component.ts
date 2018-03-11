@@ -18,10 +18,11 @@ export class CategoryMenuComponent implements OnInit {
 
   ngOnInit() {
     this.choosenCategory = 'FISHING';
+    this.choose.emit(this.choosenCategory);
   }
 
   chooseCategory(value: string) {
     this.choosenCategory = value;
-    this.choose.emit(value);
+    this.choose.emit(this.choosenCategory);
   }
 }

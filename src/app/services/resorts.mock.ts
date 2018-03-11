@@ -7,6 +7,7 @@ export const RESORTS: Resort[] = [
     phoneNumber: '+7901344224423',
     name: 'Пора отдохнуть!',
     picture: 'assets/images/1.jpg',
+    extraPictures: ['assets/images/b1.jpg', 'assets/images/r1.jpg'],
     weatherForcast: {
       airTemperature: 32,
       precipitation: AtmosphereCondition.Sun,
@@ -23,6 +24,7 @@ export const RESORTS: Resort[] = [
     phoneNumber: '+86 898 3825 1888',
     name: 'The Best Hawaii Hotel in China',
     picture: 'assets/images/2.jpg',
+    extraPictures: ['assets/images/b2.jpg', 'assets/images/r2.jpg'],
     weatherForcast: {
       airTemperature: 22,
       precipitation: AtmosphereCondition.Cloudy,
@@ -39,6 +41,7 @@ export const RESORTS: Resort[] = [
     phoneNumber: '+1 808-961-8311',
     name: 'The Best Hawaii Hotel in the USA',
     picture: 'assets/images/3.jpg',
+    extraPictures: ['assets/images/b3.jpg', 'assets/images/r3.jpg'],
     weatherForcast: {
       airTemperature: 28,
       precipitation: AtmosphereCondition.Hurricane,
@@ -55,6 +58,7 @@ export const RESORTS: Resort[] = [
     phoneNumber: '+1 808-961-8311',
     name: 'Lónsleira Apartments',
     picture: 'assets/images/4.jpg',
+    extraPictures: ['assets/images/b4.jpg', 'assets/images/r4.jpg'],
     weatherForcast: {
       airTemperature: 3,
       precipitation: AtmosphereCondition.Snow,
@@ -71,6 +75,7 @@ export const RESORTS: Resort[] = [
     phoneNumber: '+90 252 617 04 03',
     name: 'Tonoz Beach Hotel',
     picture: 'assets/images/5.jpg',
+    extraPictures: ['assets/images/b5.jpg', 'assets/images/r5.jpg'],
     weatherForcast: {
       airTemperature: 33,
       precipitation: AtmosphereCondition.Sun,
@@ -87,6 +92,7 @@ export const RESORTS: Resort[] = [
     phoneNumber: '+351 289 244 200',
     name: 'Hotel Salgados Palace',
     picture: 'assets/images/6.jpg',
+    extraPictures: ['assets/images/b6.jpg', 'assets/images/r6.jpg'],
     weatherForcast: {
       airTemperature: 13,
       precipitation: AtmosphereCondition.Rain,
