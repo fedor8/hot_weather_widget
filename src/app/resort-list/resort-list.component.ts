@@ -13,6 +13,9 @@ export class ResortListComponent implements OnInit {
   @Input()
   public resorts: Observable<Resort[]>;
 
+  @Input()
+  public category: string;
+
   constructor() { }
 
   ngOnInit() {

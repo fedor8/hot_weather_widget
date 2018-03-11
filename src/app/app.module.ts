@@ -12,6 +12,7 @@ import { ResortSmallCardComponent } from './resort-small-card/resort-small-card.
 import { CategoryMenuComponent } from './category-menu/category-menu.component';
 import { ResortCardComponent } from './resort-card/resort-card.component';
 import {ResortsService} from './services/resorts.service';
+import { ResortFilterPipe } from './pipes/resort-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {ResortsService} from './services/resorts.service';
     SocialMediaComponent,
     ResortSmallCardComponent,
     CategoryMenuComponent,
-    ResortCardComponent
+    ResortCardComponent,
+    ResortFilterPipe
   ],
   imports: [
     BrowserModule,

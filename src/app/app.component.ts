@@ -13,12 +13,18 @@ export class AppComponent implements OnInit {
 
   public resorts: Observable<Resort[]>;
 
+  public category: string;
+
   public constructor(private _resortsService: ResortsService) {
 
   }
 
   ngOnInit(): void {
     this.resorts = this._resortsService.getResorts$();
+  }
+
+  chooseCategory(category: string): void {
+    this.category = category;
   }
 }
 

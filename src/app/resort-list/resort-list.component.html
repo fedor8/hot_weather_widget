@@ -2,8 +2,8 @@
   <h3>Righteous indignation & like</h3>
   <span class="line"> </span>
   <div class="activity_box">
-    <div class="scrollbar" id="style-2" *ngIf="resorts | async as resortsArray; else loadGif">
-      <div class="activity-row" *ngFor="let resort of resortsArray">
+    <div class="scrollbar" id="style-2" *ngIf="resorts | async  as resortsArray; else loadGif">
+      <div class="activity-row" *ngFor="let resort of resortsArray | resortFilter:category">
         <div class="activity-desc">
           <h5>{{resort.name}}</h5>
           <p>{{resort.address}}</p>
