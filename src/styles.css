@@ -166,6 +166,10 @@ span.cloud {
 ul li.anc-bor {
   border-right: none;
 }
+ul li.is-selected a{
+  font-weight: bolder;
+}
+
 /*--scroll --*/
 .span_7 {
   padding-left: 0;

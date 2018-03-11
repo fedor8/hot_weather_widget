@@ -1,27 +1,25 @@
-import {Observable} from "rxjs/Observable";
-import "rxjs/add/observable/of";
-import "rxjs/add/observable/from";
-import {delay} from "rxjs/operators";
+import 'rxjs/add/observable/of';
+import 'rxjs/add/observable/from';
 
-export interface Place{
+export interface Place {
   address: string;
   phoneNumber: string;
   name: string;
   picture: string;
 }
 
-export interface WeatherForcast{
+export interface WeatherForcast {
   airTemperature: number;
   precipitation: AtmosphereCondition;
   waterTemperature: number;
 }
 
-export interface SocialMedia{
+export interface SocialMedia {
   followers: number;
   following: number;
 }
 
-export enum AtmosphereCondition{
+export enum AtmosphereCondition {
   Snow,
   Rain,
   Sun,
@@ -30,6 +28,7 @@ export enum AtmosphereCondition{
 }
 
 export class Resort implements Place {
+  categories: string[];
   address: string;
   phoneNumber: string;
   name: string;
