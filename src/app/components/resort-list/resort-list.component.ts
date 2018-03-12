@@ -19,6 +19,7 @@ export class ResortListComponent implements OnInit {
   @Output()
   public choose: EventEmitter<Resort> = new EventEmitter();
 
+  @Input()
   private choosenResort: Resort;
 
   constructor() { }
