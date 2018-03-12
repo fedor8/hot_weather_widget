@@ -1,0 +1,11 @@
+{
+  "app": {
+    "title": "Hot Weather Widget"
+  },
+  "categories": {
+    "HOTEL": "Hotel",
+    "FISHING": "Fishing",
+    "TOURS": "Tours",
+    "WEATHER": "Weather"
+  }
+}
