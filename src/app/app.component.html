@@ -3,7 +3,7 @@
 </h1>
 <div class="element">
   <div class="element-left">
-    <div class="element-bg-img"><img src="assets/images/1.jpg" alt="" class="img-responsive"> </div>
+    <div class="element-bg-img"><img *ngIf="resort" [src]="resort.picture" alt="" class="img-responsive"> </div>
     <div class="element-left-bottom">
       <hww-category-menu (choose)="chooseCategory($event);"></hww-category-menu>
       <hww-resort-list [resorts]="resorts" [category]="category" (choose)="resort = $event;"></hww-resort-list>
