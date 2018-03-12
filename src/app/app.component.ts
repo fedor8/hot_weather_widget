@@ -5,6 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import {ResortFilterPipe} from "./pipes/resort-filter.pipe";
 import {AsyncPipe} from "@angular/common";
 import {Subscription} from "rxjs/Subscription";
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -24,9 +25,10 @@ export class AppComponent implements OnInit, OnDestroy {
   public constructor(
     private _resortsService: ResortsService,
     private _resortFilterPipe: ResortFilterPipe,
-    private _asyncPipe: AsyncPipe
+    private _asyncPipe: AsyncPipe,
+    private _translate: TranslateService
   ) {
-
+    _translate.setDefaultLang('ru');
   }
 
   ngOnInit(): void {
