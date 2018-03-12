@@ -19,12 +19,15 @@ export class ResortListComponent implements OnInit {
   @Output()
   public choose: EventEmitter<Resort> = new EventEmitter();
 
+  private choosenResort: Resort;
+
   constructor() { }
 
   ngOnInit() {
   }
 
   chooseResort(resort: Resort) {
+    this.choosenResort = resort;
     this.choose.emit(resort);
   }
 }

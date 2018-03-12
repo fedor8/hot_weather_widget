@@ -253,6 +253,10 @@ i.text-info{
 }
 .activity-row{
   margin-bottom:1em;
+  cursor: pointer;
+}
+.selected-row{
+  border-left: solid 3px chocolate;
 }
 .scrollbar{
   height:115px;
