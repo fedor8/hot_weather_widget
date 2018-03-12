@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Resort} from '../../classes/resort';
 
 @Component({
   selector: 'hww-resort-small-card',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./resort-small-card.component.css']
 })
 export class ResortSmallCardComponent implements OnInit {
+
+  @Input()
+  public resort: Resort;
 
   constructor() { }
 

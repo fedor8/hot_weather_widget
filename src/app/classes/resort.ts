@@ -20,11 +20,11 @@ export interface SocialMedia {
 }
 
 export enum AtmosphereCondition {
-  Snow,
-  Rain,
-  Sun,
-  Cloudy,
-  Hurricane
+  Snow = 'snow',
+  Rain = 'rain',
+  Sun = 'sun',
+  Cloudy = 'cloud',
+  Hurricane = 'hurricane'
 }
 
 export class Resort implements Place {

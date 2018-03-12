@@ -6,12 +6,12 @@
     <div class="element-bg-img"><img src="assets/images/1.jpg" alt="" class="img-responsive"> </div>
     <div class="element-left-bottom">
       <hww-category-menu (choose)="chooseCategory($event);"></hww-category-menu>
-      <hww-resort-list [resorts]="resorts" [category]="category"></hww-resort-list>
+      <hww-resort-list [resorts]="resorts" [category]="category" (choose)="resort = $event;"></hww-resort-list>
     </div>
   </div>
   <div class="element-right">
-    <hww-weather></hww-weather>
-    <hww-resort-small-card></hww-resort-small-card>
+    <hww-weather [weatherForcast]="resort?.weatherForcast"></hww-weather>
+    <hww-resort-small-card [resort]="resort"></hww-resort-small-card>
   </div>
   <div class="clear"> </div>
 </div>

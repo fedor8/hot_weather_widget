@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import {Resort} from '../../../resort';
+import {Resort} from '../../classes/resort';
 
 
 @Component({
@@ -16,9 +16,15 @@ export class ResortListComponent implements OnInit {
   @Input()
   public category: string;
 
+  @Output()
+  public choose: EventEmitter<Resort> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  chooseResort(resort: Resort) {
+    this.choose.emit(resort);
+  }
 }

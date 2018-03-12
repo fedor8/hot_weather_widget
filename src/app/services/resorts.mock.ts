@@ -1,4 +1,4 @@
-import {AtmosphereCondition, Resort} from '../../resort';
+import {AtmosphereCondition, Resort} from '../classes/resort';
 
 export const RESORTS: Resort[] = [
   {

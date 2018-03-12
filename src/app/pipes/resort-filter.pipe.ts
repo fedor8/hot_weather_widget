@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {Resort} from '../../resort';
+import {Resort} from '../classes/resort';
 
 @Pipe({
   name: 'resortFilter'

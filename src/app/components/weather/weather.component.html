@@ -1,7 +1,12 @@
-<div class="temperatur">
+<div class="temperatur" *ngIf="weatherForcast; else emptyWeather">
   <h5>Et harum quidem</h5>
   <span class="w-line"> </span>
-  <span class="cloud"> </span>
-  <h2>14<sup class="degree">°</sup></h2>
-  <h6>Water 20<sup class="degree">°</sup></h6>
+  <span [ngClass]="{cloud : 'cloud' == weatherForcast.precipitation,
+                    sun : 'sun' == weatherForcast.precipitation,
+                    rain : 'rain' == weatherForcast.precipitation,
+                    snow : 'snow' == weatherForcast.precipitation,
+                    hurricane : 'hurricane' == weatherForcast.precipitation}">{{weatherForcast.precipitation}}</span>
+  <h2>{{weatherForcast.airTemperature}}<sup class="degree">°</sup></h2>
+  <h6>Water {{weatherForcast.waterTemperature}}<sup class="degree">°</sup></h6>
 </div>
+<ng-template #emptyWeather></ng-template>

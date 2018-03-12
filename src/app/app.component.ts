@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Resort} from '../resort';
+import {Resort} from './classes/resort';
 import {ResortsService} from './services/resorts.service';
 import {Observable} from 'rxjs/Observable';
 
@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   public resorts: Observable<Resort[]>;
 
   public category: string;
+  public resort: Resort;
 
   public constructor(private _resortsService: ResortsService) {
 

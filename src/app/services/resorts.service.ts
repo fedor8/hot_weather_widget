@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Resort} from '../../resort';
+import {Resort} from '../classes/resort';
 import {Observable} from 'rxjs/Observable';
 import {delay} from 'rxjs/operators';
 import {RESORTS} from './resorts.mock';
