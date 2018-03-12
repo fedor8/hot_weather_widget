@@ -3,7 +3,7 @@
   <span class="w-line"> </span>
   <!-- Как следует работать с Enum в таких случаях?
   Конструкция
-        AtmosphereCondition.Cloudy === weatherForcast.precipitation
+        cloud : AtmosphereCondition.Cloudy === weatherForcast.precipitation
   не работает: Cannot read property 'Cloudy' of undefined
   -->
   <span [ngClass]="{cloud : 'cloud' == weatherForcast.precipitation,
