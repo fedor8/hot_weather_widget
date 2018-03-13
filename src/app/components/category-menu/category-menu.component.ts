@@ -5,7 +5,7 @@ import {AfterViewInit, Component, EventEmitter, OnInit, Output} from '@angular/c
   templateUrl: './category-menu.component.html',
   styleUrls: ['./category-menu.component.css']
 })
-export class CategoryMenuComponent implements AfterViewInit {
+export class CategoryMenuComponent implements OnInit, AfterViewInit {
 
   constructor() { }
 
@@ -16,8 +16,12 @@ export class CategoryMenuComponent implements AfterViewInit {
   @Output()
   public choose: EventEmitter<string> = new EventEmitter();
 
+  ngOnInit() {
+    this.choosenCategory = 'FISHING';
+  }
+
   ngAfterViewInit() {
-    this.chooseCategory('FISHING');
+    this.choose.emit(this.choosenCategory);
   }
 
   chooseCategory(value: string) {
