@@ -33,7 +33,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.resorts = this._resortsService.getResorts$();
+    this.resorts = this._resortsService.resorts$;
     this.resortsSubscription = this.resorts.subscribe((resortsArray: Resort[]) => {
       const filtered = this._resortFilterPipe.transform(resortsArray, this.category);
       if (filtered) {

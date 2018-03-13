@@ -3,20 +3,23 @@ import {Resort} from '../classes/resort';
 import {Observable} from 'rxjs/Observable';
 import {delay} from 'rxjs/operators';
 import {RESORTS} from './resorts.mock';
+import {Subject} from "rxjs/Subject";
 
 export class ResortsService {
 
+  private choosenResortSource = new Subject<Resort>();
+
   constructor() { }
 
-  public getResorts$(): Observable<Resort[]> {
-    return RESORTS$;
+  public get resorts$(): Observable<Resort[]> {
+    return Observable.of(RESORTS).pipe(
+      delay(3000)
+    );
   }
 
-  public getResorts(): Resort[] {
+  public get resorts(): Resort[] {
     return RESORTS;
   }
 }
 
-const RESORTS$: Observable<Resort[]> = Observable.of(RESORTS).pipe(
-  delay(3000)
-);
+
