@@ -9,9 +9,8 @@
     <div class="element-left-bottom">
       <hww-category-menu (choose)="resorts.category = $event"></hww-category-menu>
       <hww-resort-list #resorts
-        [category]="category"
-        [choosenResort]="resort"
-        (choose)="resort = $event;"></hww-resort-list>
+        (choose)="resort = $event;">
+      </hww-resort-list>
     </div>
   </div>
   <div class="element-right">

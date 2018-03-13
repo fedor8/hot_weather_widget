@@ -14,7 +14,6 @@ import {TranslateService} from '@ngx-translate/core';
   providers: [ResortFilterPipe, AsyncPipe]
 })
 export class AppComponent implements OnInit {
-  title = 'Hot Weather Widget';
 
   public resort: Resort;
 
