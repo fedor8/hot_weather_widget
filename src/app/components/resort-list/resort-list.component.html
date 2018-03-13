@@ -2,7 +2,7 @@
   <h3>Righteous indignation & like</h3>
   <span class="line"> </span>
   <div class="activity_box">
-    <div class="scrollbar" id="style-2" *ngIf="resorts | async  as resortsArray; else loadGif">
+    <div class="scrollbar" id="style-2" *ngIf="resorts$ | async  as resortsArray; else loadGif">
       <div class="activity-row"
            [ngClass]="{'selected-row': (resort === choosenResort)}"
            *ngFor="let resort of resortsArray | resortFilter:category"

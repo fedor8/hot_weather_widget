@@ -13,14 +13,13 @@ import {TranslateService} from '@ngx-translate/core';
   styleUrls: ['./app.component.css'],
   providers: [ResortFilterPipe, AsyncPipe]
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnInit {
   title = 'Hot Weather Widget';
 
   public resorts: Observable<Resort[]>;
 
   public category: string;
   public resort: Resort;
-  private resortsSubscription: Subscription;
 
   public constructor(
     private _resortsService: ResortsService,
@@ -34,12 +33,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.resorts = this._resortsService.resorts$;
-    this.resortsSubscription = this.resorts.subscribe((resortsArray: Resort[]) => {
-      const filtered = this._resortFilterPipe.transform(resortsArray, this.category);
-      if (filtered) {
-        this.resort = filtered[0];
-      }
-    });
   }
 
   chooseCategory(category: string): void {
@@ -55,10 +48,6 @@ export class AppComponent implements OnInit, OnDestroy {
     if (filteredResorts && Array.isArray(filteredResorts) && !filteredResorts.includes(this.resort)) {
       this.resort = filteredResorts[0];
     }
-  }
-
-  ngOnDestroy(): void {
-    this.resortsSubscription.unsubscribe();
   }
 }
 
