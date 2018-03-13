@@ -9,7 +9,6 @@
     <div class="element-left-bottom">
       <hww-category-menu (choose)="chooseCategory($event);"></hww-category-menu>
       <hww-resort-list
-        [resorts]="resorts"
         [category]="category"
         [choosenResort]="resort"
         (choose)="resort = $event;"></hww-resort-list>

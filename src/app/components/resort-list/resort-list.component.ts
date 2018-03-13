@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {Resort} from '../../classes/resort';
+import {ResortsService} from "../../services/resorts.service";
 
 
 @Component({
@@ -10,7 +11,6 @@ import {Resort} from '../../classes/resort';
 })
 export class ResortListComponent implements OnInit {
 
-  @Input()
   public resorts: Observable<Resort[]>;
 
   @Input()
@@ -22,9 +22,11 @@ export class ResortListComponent implements OnInit {
   @Input()
   private choosenResort: Resort;
 
-  constructor() { }
+  constructor(private _resortService: ResortsService) {
+  }
 
   ngOnInit() {
+    this.resorts = this._resortService.resorts$;
   }
 
   chooseResort(resort: Resort) {
