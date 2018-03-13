@@ -4,8 +4,7 @@
 <div class="element">
   <div class="element-left">
     <div class="element-bg-img">
-      <img *ngIf="resort; else noResorts" [src]="resort.picture" alt="" class="img-responsive">
-      <ng-template #noResorts>Loading...</ng-template>
+      <hww-resort-main-picture [resort]="resort"></hww-resort-main-picture>
     </div>
     <div class="element-left-bottom">
       <hww-category-menu (choose)="chooseCategory($event);"></hww-category-menu>

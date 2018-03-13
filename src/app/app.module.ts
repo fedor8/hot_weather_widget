@@ -14,6 +14,7 @@ import { CategoryMenuComponent } from './components/category-menu/category-menu.
 import {ResortsService} from './services/resorts.service';
 import { ResortFilterPipe } from './pipes/resort-filter.pipe';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { ResortMainPictureComponent } from './components/resort-main-picture/resort-main-picture.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     SocialMediaComponent,
     ResortSmallCardComponent,
     CategoryMenuComponent,
-    ResortFilterPipe
+    ResortFilterPipe,
+    ResortMainPictureComponent
   ],
   imports: [
     BrowserModule,
