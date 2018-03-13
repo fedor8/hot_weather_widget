@@ -15,24 +15,18 @@ import {AsyncPipe} from "@angular/common";
 export class ResortListComponent implements OnInit, OnDestroy {
 
   private resortsSubscription: Subscription;
-  public resorts$: Observable<Resort[]>;
+  public resorts: Resort[];
 
   private _category: string;
 
   @Input()
   public set category(category: string) {
     this._category = category;
-    console.log('resorts', this.resorts$);
-    let syncResorts = this._asyncPipe.transform(this.resorts$);
-    console.log('syncResorts', syncResorts);
-    // TODO слишком сложно и странный WrappedValue приходит при первом вызове. Как сделать проще?
-    if (syncResorts && syncResorts instanceof WrappedValue) {
-      syncResorts = WrappedValue.unwrap(syncResorts);
+    const filtered = this._resortFilterPipe.transform(this.resorts, this._category);
+    if (filtered) {
+      this.chooseResort(filtered[0]);
     }
-    const filteredResorts: Resort[] = this._resortFilterPipe.transform(syncResorts, this._category);
-    if (filteredResorts && Array.isArray(filteredResorts) && !filteredResorts.includes(this.choosenResort)) {
-      this.chooseResort(filteredResorts[0]);
-    }
+
   }
 
   public get category(): string {
@@ -51,12 +45,13 @@ export class ResortListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.resorts$ = this._resortService.resorts$;
     this.resortsSubscription = this._resortService.resorts$.subscribe((resortsArray: Resort[]) => {
-      const filtered = this._resortFilterPipe.transform(resortsArray, this.category);
+      this.resorts = resortsArray;
+      const filtered = this._resortFilterPipe.transform(resortsArray, this._category);
       if (filtered) {
         this.chooseResort(filtered[0]);
       }
+      this.resortsSubscription.unsubscribe();
     });
   }
 
