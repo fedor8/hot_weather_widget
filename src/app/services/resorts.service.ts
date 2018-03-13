@@ -16,12 +16,9 @@ export class ResortsService {
   constructor(private _http: HttpClient) { }
 
   public get resorts$(): Observable<Resort[]> {
-    return this._http.get<Resort[]>(this.RESORTS_URL);
+    return this._http.get<Resort[]>(this.RESORTS_URL).pipe(delay(3000));
   }
 
-  public get resorts(): Resort[] {
-    return RESORTS;
-  }
 }
 
 
