@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {SocialMedia} from '../../classes/resort';
 
 @Component({
   selector: 'hww-social-media',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./social-media.component.css']
 })
 export class SocialMediaComponent implements OnInit {
+
+  @Input() social: SocialMedia;
 
   constructor() { }
 
