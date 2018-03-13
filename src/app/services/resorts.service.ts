@@ -7,8 +7,8 @@ import {Subject} from "rxjs/Subject";
 
 export class ResortsService {
 
-  private choosenResortSource = new Subject<Resort>();
-  choosenResort$ = this.choosenResortSource.asObservable();
+  private choosenCategorySource = new Subject<String>();
+  choosenCategory$ = this.choosenCategorySource.asObservable();
 
   constructor() { }
 

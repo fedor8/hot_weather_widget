@@ -7,8 +7,8 @@
       <hww-resort-main-picture [resort]="resort"></hww-resort-main-picture>
     </div>
     <div class="element-left-bottom">
-      <hww-category-menu (choose)="chooseCategory($event);"></hww-category-menu>
-      <hww-resort-list
+      <hww-category-menu (choose)="resorts.category = $event"></hww-category-menu>
+      <hww-resort-list #resorts
         [category]="category"
         [choosenResort]="resort"
         (choose)="resort = $event;"></hww-resort-list>

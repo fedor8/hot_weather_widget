@@ -1,11 +1,11 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'hww-category-menu',
   templateUrl: './category-menu.component.html',
   styleUrls: ['./category-menu.component.css']
 })
-export class CategoryMenuComponent implements OnInit {
+export class CategoryMenuComponent implements AfterViewInit {
 
   constructor() { }
 
@@ -16,9 +16,8 @@ export class CategoryMenuComponent implements OnInit {
   @Output()
   public choose: EventEmitter<string> = new EventEmitter();
 
-  ngOnInit() {
-    this.choosenCategory = 'FISHING';
-    this.choose.emit(this.choosenCategory);
+  ngAfterViewInit() {
+    this.chooseCategory('FISHING');
   }
 
   chooseCategory(value: string) {

@@ -1,9 +1,10 @@
-import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output, WrappedValue} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {Resort} from '../../classes/resort';
-import {ResortsService} from "../../services/resorts.service";
-import {Subscription} from "rxjs/Subscription";
-import {ResortFilterPipe} from "../../pipes/resort-filter.pipe";
+import {ResortsService} from '../../services/resorts.service';
+import {Subscription} from 'rxjs/Subscription';
+import {ResortFilterPipe} from '../../pipes/resort-filter.pipe';
+import {AsyncPipe} from "@angular/common";
 
 
 @Component({
@@ -16,8 +17,27 @@ export class ResortListComponent implements OnInit, OnDestroy {
   private resortsSubscription: Subscription;
   public resorts$: Observable<Resort[]>;
 
+  private _category: string;
+
   @Input()
-  public category: string;
+  public set category(category: string) {
+    this._category = category;
+    console.log('resorts', this.resorts$);
+    let syncResorts = this._asyncPipe.transform(this.resorts$);
+    console.log('syncResorts', syncResorts);
+    // TODO слишком сложно и странный WrappedValue приходит при первом вызове. Как сделать проще?
+    if (syncResorts && syncResorts instanceof WrappedValue) {
+      syncResorts = WrappedValue.unwrap(syncResorts);
+    }
+    const filteredResorts: Resort[] = this._resortFilterPipe.transform(syncResorts, this._category);
+    if (filteredResorts && Array.isArray(filteredResorts) && !filteredResorts.includes(this.choosenResort)) {
+      this.chooseResort(filteredResorts[0]);
+    }
+  }
+
+  public get category(): string {
+    return this._category;
+  }
 
   @Output()
   public choose: EventEmitter<Resort> = new EventEmitter();
@@ -26,7 +46,8 @@ export class ResortListComponent implements OnInit, OnDestroy {
   private choosenResort: Resort;
 
   constructor(private _resortService: ResortsService,
-              private _resortFilterPipe: ResortFilterPipe) {
+              private _resortFilterPipe: ResortFilterPipe,
+              private _asyncPipe: AsyncPipe) {
   }
 
   ngOnInit() {
@@ -40,6 +61,7 @@ export class ResortListComponent implements OnInit, OnDestroy {
   }
 
   chooseResort(resort: Resort) {
+    console.log('chooseResort', resort);
     this.choosenResort = resort;
     this.choose.emit(resort);
   }
