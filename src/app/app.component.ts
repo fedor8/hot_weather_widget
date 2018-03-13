@@ -29,6 +29,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private _translate: TranslateService
   ) {
     _translate.setDefaultLang('ru');
+    _translate.addLangs(['ru', 'en']);
   }
 
   ngOnInit(): void {

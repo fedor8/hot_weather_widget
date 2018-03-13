@@ -2,7 +2,7 @@
   <ul>
     <li *ngFor="let category of categories; last as isLast"
         [ngClass]="{'anc-bor': isLast, 'is-selected': category === choosenCategory}">
-      <a href="#" (click)="chooseCategory(category)">{{category}}</a>
+      <a href="#" (click)="chooseCategory(category)">{{'categories.'+category | translate}}</a>
     </li>
   </ul>
 </div>
