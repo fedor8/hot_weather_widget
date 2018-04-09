@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "gh-page": "angular-cli-ghpages --repo=https://GH_TOKEN@github.com/fedor8/hot_weather_widget.git -S"
+    "gh-page": "angular-cli-ghpages --repo=https://GH_TOKEN@github.com/fedor8/hot_weather_widget.git -S",
+    "rebuild-gh-page": "npm run build & npm run gh-page"
   },
   "private": true,
   "dependencies": {
